@@ -27,7 +27,7 @@ class ModulesServiceProvider extends ServiceProvider
 
                 //Подгружаем миграции
                 if (is_dir(__DIR__ . '/' . $module . '/Migrations')) {
-                    $this->loadMigrationsFrom(__DIR__ . '/' . $module . '/Migration');
+                    $this->loadMigrationsFrom(__DIR__ . '/' . $module . '/Migrations');
                 }
             }
         }
