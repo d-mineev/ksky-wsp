@@ -1,5 +1,9 @@
 <?php
 
+const REPORT_CONNECTION = 'report';
+
+const FEEDBACK_CONNECTION = 'feedback';
+
 return [
 
     'fetch' => PDO::FETCH_CLASS,
@@ -8,7 +12,7 @@ return [
 
     'connections' => [
 
-        'report' => [
+        REPORT_CONNECTION => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', '127.0.0.1'),
             'database'  => env('DB_REPORT_DATABASE', ''),
@@ -21,7 +25,7 @@ return [
             'strict'    => false,
         ],
 
-        'feedback' => [
+        FEEDBACK_CONNECTION => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_FEEDBACK_DATABASE', ''),
