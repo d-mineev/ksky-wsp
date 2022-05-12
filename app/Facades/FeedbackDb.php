@@ -2,13 +2,18 @@
 
 namespace App\Facades;
 
+use Doctrine\DBAL\Driver\PDOConnection;
+use Illuminate\Database\Connection;
+use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Query\Expression;
 use Illuminate\Support\Facades\DB;
 
 /**
- * @method static \Doctrine\DBAL\Driver\PDOConnection getPdo()
- * @method static \Illuminate\Database\ConnectionInterface connection(string $name = null)
- * @method static \Illuminate\Database\Query\Builder table(string $table, string $as = null)
- * @method static \Illuminate\Database\Query\Expression raw($value)
+ * @method static PDOConnection getPdo()
+ * @method static ConnectionInterface connection(string $name = null)
+ * @method static Builder table(string $table, string $as = null)
+ * @method static Expression raw($value)
  * @method static array getQueryLog()
  * @method static array prepareBindings(array $bindings)
  * @method static array pretend(\Closure $callback)
@@ -31,7 +36,7 @@ use Illuminate\Support\Facades\DB;
  * @method static void disableQueryLog()
  * @method static void flushQueryLog()
  * @method static void registerDoctrineType(string $class, string $name, string $type)
- * @method static \Illuminate\Database\Connection beforeExecuting(\Closure $callback)
+ * @method static Connection beforeExecuting(\Closure $callback)
  * @method static void listen(\Closure $callback)
  * @method static void rollBack(int $toLevel = null)
  * @method static void setDefaultConnection(string $name)
@@ -39,7 +44,6 @@ use Illuminate\Support\Facades\DB;
  * @see \Illuminate\Database\DatabaseManager
  * @see \Illuminate\Database\Connection
  */
-
 class FeedbackDb extends DB
 {
     /**

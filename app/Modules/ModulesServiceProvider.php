@@ -16,11 +16,11 @@ class ModulesServiceProvider extends ServiceProvider
         if ($modules) {
             foreach ($modules as $module) {
                 //Подключаем роуты для модуля
-                if (file_exists(__DIR__ . '/' . $module . '/Routes/routes.php')) {
-                    $this->loadRoutesFrom(__DIR__ . '/' . $module . '/Routes/routes.php');
+                if (file_exists(__DIR__ . '/' . $module . '/Routes/web.php')) {
+                    $this->loadRoutesFrom(__DIR__ . '/' . $module . '/Routes/web.php');
                 }
                 //Загружаем View
-                //view('Test::admin')
+                //Пример использованяи - view('Test::admin')
                 if (is_dir(__DIR__ . '/' . $module . '/Views')) {
                     $this->loadViewsFrom(__DIR__ . '/' . $module . '/Views', $module);
                 }
